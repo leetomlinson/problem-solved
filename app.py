@@ -2,7 +2,7 @@ import json
 import os
 import re
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, Markup
 
 app = Flask(__name__)
 
@@ -18,6 +18,8 @@ def home():
 @app.route("/solution/<id>")
 def solution(id):
     solution = retrieve_solution(SOLUTIONS_DIR, id)
+    solution["statement"] = Markup(solution["statement"])
+    solution["solution"] = Markup(solution["solution"])
     return render_template("solution.html", solution=solution)
 
 

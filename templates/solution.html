@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem Solved</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Solutions File</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/compose">Compose</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <p>Problem: {{ solution["problem"] }}</p>
+    <p>Book: {{ solution["book"] }}</p>
+    <p>Author: {{ solution["author"] }}</p>
+
+    <h1>Problem</h1>
+    <p>{{ solution["statement"] }}</p>
+
+    <h1>Solution</h1>
+    <p>{{ solution["solution"] }}</p>
+</div>
+
+<footer class="container-fluid">
+    Copyright &copy; 2017 Lee Tomlinson
+</footer>
+
+</body>
+</html>

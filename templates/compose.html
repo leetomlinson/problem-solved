@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem Solved</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    <script>
+    function update() {
+        document.getElementById("render_statement").innerHTML = statement.value;
+        document.getElementById("render_solution").innerHTML = solution.value;
+        MathJax.Hub.Typeset();
+    }
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Solutions File</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/compose">Compose</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <h1>Compose a solution</h1>
+    <form action="/compose" method="POST">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="book">Book:</label>
+                    <input type="text" class="form-control" id="book" name="book">
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" class="form-control" id="author" name="author">
+                </div>
+
+                <div class="form-group">
+                    <label for="problem">Problem:</label>
+                    <input type="text" class="form-control" id="problem" name="problem">
+                </div>
+
+                <div class="form-group">
+                    <label for="statement">Enter problem statement here:</label>
+                    <textarea class="form-control" rows="10" id="statement" name="statement" oninput="update()"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <h2>Problem</h2>
+                <div id="render_statement"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="solution">Enter solution here:</label>
+                    <textarea class="form-control" rows="20" id="solution" name="solution" oninput="update()"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <h2>Solution</h2>
+                <div id="render_solution"></div>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </form>
+</div>
+
+<footer class="container-fluid">
+    Copyright &copy; 2017 Lee Tomlinson
+</footer>
+
+</body>
+</html>

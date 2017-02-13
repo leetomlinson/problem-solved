@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem Solved</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Solutions File</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/compose">Compose</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <ul>
+        {% for solution in solution_list %}
+        <li>
+            <a href="solution/{{ solution['solution_id'] }}">
+                Problem: {{ solution["problem"] }}
+            </a>
+            <br>
+            Book: {{ solution["book"] }}
+            <br>
+            Author: {{ solution["author"] }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<footer class="container-fluid">
+    Copyright &copy; 2017 Lee Tomlinson
+</footer>
+
+</body>
+</html>
